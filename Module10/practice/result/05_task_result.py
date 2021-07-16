@@ -25,3 +25,14 @@
 # 2
 # Выходные данные-2:
 # 0
+H = int(input("Введите высоту дома: "))
+N = int(input("Введите этаж Коли: "))
+k = int(input("Введите сколько этажей останавливается лифт: "))
+
+price_up = 200
+price_down = 100
+
+k_list = range(1, H, k) # список этажей остановок
+price = min([price_up*(N - x) if x <= N else (x - N)*price_down for x in k_list])
+
+print("Mинимальная стоимость подъема: ", price)
